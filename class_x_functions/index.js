@@ -64,7 +64,7 @@ class LivroColecao extends Livro{
     };
     descreverColecao(){
         console.log(
-            `O livro ${this.nome} faz parte da`,
+            `O livro ${Wthis.nome} faz parte da`,
             `coleção ${this.nomeColecao}`
         );
     };
