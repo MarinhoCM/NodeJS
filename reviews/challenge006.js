@@ -21,8 +21,32 @@
 // console.log(showTeamPosition(5))
 // console.log(showTeamPosition(6))
 
-let num = 20;
+// let num = 20;
 
-while(num <= 30){
-    console.log(num++);
+// while(num <= 30){
+//     console.log(num++);
+// }
+
+
+function convertToHex(color){
+    switch(color) {
+        case 'red':
+            return `O hexadecimal para a cor: ${color} é #FF0000.`;
+        case 'blue':
+            return `O hexadecimal para a cor: ${color} é #0000FF.`;
+        case 'green':
+            return `O hexadecimal para a cor: ${color} é #00FF00`;
+        case 'black':
+            return `O hexadecimal para a cor: ${color} é #000000.`;
+        case 'white':
+            return `O hexadecimal para a cor: ${color} é #FFFFFF.`;
+        default:
+            return `Não temos o equivalente hexadecimal para ${color}.`;
+    }
 }
+console.log(convertToHex("red"))
+console.log(convertToHex("blue"))
+console.log(convertToHex("green"))
+console.log(convertToHex("black"))
+console.log(convertToHex("white"))
+console.log(convertToHex("gray"))
