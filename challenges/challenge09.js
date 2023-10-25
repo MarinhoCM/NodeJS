@@ -2,7 +2,7 @@
 Crie uma IIFE que envolva todo o código desse arquivo. Faça também a
 indentação correta do código, para ficar dentro da IIFE.
 */
-function iife() {
+(function(){
     /*
     Analise as funções abaixo (`myFunction`, `myFunction2` e `myFunction3`, e
     ajuste o posicionamento das variáveis e funções internas, para que os códigos
@@ -109,5 +109,4 @@ function iife() {
     console.log(`O resultado da multiplicação é: ${multiplication(function (x,y){return x - y})}`);
     console.log(`O resultado da divisão é: ${division(function (x,y){return x - y})}`);
     console.log(`O resto da divisão é: ${mod(function (x,y){return x - y})}`);
-}
-iife()
+})();
