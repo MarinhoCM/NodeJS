@@ -1,5 +1,5 @@
 // Envolva todo o código desse arquivo em uma IIFE (incluindo esse comentário).
-function IIFE(){
+(function(){
     /*
     Crie uma variável chamada `once`, que recebe `false` como seu valor.
     Crie um loop que execute enquanto essa variável for verdadeira. Dentro do
@@ -8,17 +8,18 @@ function IIFE(){
     Qual loop você deve usar para que essa mensagem seja mostrada no console?
     */
     let once = false;
-    while(once == true){
-        console.log('Entrou ao menos uma vez!')
-    }
+    do {
+        console.log('Entrou ao menos uma vez!');
+    } while(once == true);
     /*
     Crie um objeto chamado `person`, que receba as seguintes propriedades:
     - 'name', 'age', 'weight' e 'birthday'. Preencha com os valores corretos
     para o nome, idade, peso e data de nascimento dessa pessoa.
     */
     let person = {
-        "name": 'Marin', "age": 19, "weight": 80, "birthday":"23/06/2004"
-    }
+        "name": 'Marin', "age": 19, 
+        "weight": 70, "birthday":"23/06"
+    };
     /*
     Use um loop para percorrer o objeto criado acima, mostrando no console
     a frase:
@@ -28,9 +29,12 @@ function IIFE(){
     Após o loop, mostre a frase:
     'The person has [COUNTER] properties'
     */
+    let counter = 0; 
     for (const key in person) {
         console.log(`The ${key} of person is ${person[key]}`);
-    }
+        counter++;
+    };
+    console.log(`The person has ${counter} properties`);
     /*
     Crie uma função chamada `moreThan`, que vai verificar se a pessoa (objeto
     criado acima) é mais velha que a idade passada por parâmetro.
@@ -39,14 +43,12 @@ function IIFE(){
     'The person has more than 25 years old? [TRUE/FALSE]'
     */
     function moreThan(age){
-        if (age > person.age) {
-            return true;
-        } else {
-            return false;
-        }
+        return person.age > age;
     }
-    console.log('The person has more than 25 years old? [TRUE/FALSE]')
-    console.log(moreThan(19));
+    console.log(
+        'The person has more than 25 years old? [TRUE/FALSE]',
+        moreThan(25)
+    )
     /*
     Faça um loop de 0 a 20, que adicione cada número como um item de um
     array chamado `numbers`. Se o contador for maior que 10, saia do loop.
@@ -54,7 +56,10 @@ function IIFE(){
     */
     console.log( 'De 0 a 10:' );
     let numbers = [];
-    for (let index = 0; index <= 10; index++) {
+    for (let index = 0; index <= 20; index++) {
+        if ( index > 10 ){
+            break;
+        };
         numbers.push(index);
     }
     console.log(numbers);
@@ -69,11 +74,10 @@ function IIFE(){
         numbers.pop();
     };
     for (let i = 0; i <= 20; i++) {
-        let operation = i % 2;
-        if (operation == 0) {
-            numbers.push(i);
+        if (i % 2 !== 0){
+            continue;
         };
+        numbers.push(i);
     };
     console.log(numbers);
-}
-IIFE();
+})();
